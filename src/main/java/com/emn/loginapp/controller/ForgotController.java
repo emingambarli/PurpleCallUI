@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class ForgotController {
-    @GetMapping("/forgot")
+    @GetMapping ("/forgot")
     public String forgot(){
         return "../static/forgot";
     }

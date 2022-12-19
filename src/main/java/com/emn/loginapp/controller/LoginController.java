@@ -18,6 +18,6 @@ public class LoginController {
     {
         //Users users1 = new Users(null, "emin", "email@email.com", "EEee0816624!");
         System.out.println(users.toString());
-        return "../static/login";
+        return "../static/dashboard";
     }
 }
