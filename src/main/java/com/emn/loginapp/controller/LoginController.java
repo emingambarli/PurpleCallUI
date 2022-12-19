@@ -13,7 +13,7 @@ public class LoginController {
     {
         return "../static/login";
     }
-    @PostMapping("/login")
+    @GetMapping ("/login")
     public String userVerification(@ModelAttribute Users users)
     {
         //Users users1 = new Users(null, "emin", "email@email.com", "EEee0816624!");
