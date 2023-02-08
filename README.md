@@ -36,7 +36,7 @@ The project has 2 nomads(1 server, 1 client) registered in the consul server wit
 ## 🎉 Social Links <a name = "sociallinks"></a>
 
 <a href="https://www.linkedin.com/in/emin-gambarli/">
-<img border="0" alt="Linkedin" src="img/linkedin.png" width="100" height="100">
+<img border="0" alt="Linkedin" src="img/linkedin.png" width="50" height="50">
 </a>
 
 <a href="https://hub.docker.com/repository/docker/emn503/loginapp/general">
