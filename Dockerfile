@@ -1,4 +1,4 @@
-FROM openjdk:11
+FROM openjdk:19
 VOLUME /tmp
 EXPOSE 8080
 ARG JAR_FILE=target/loginapp.jar
