@@ -1,4 +1,4 @@
-<h3 align="center">Project Title</h3>
+<h3 align="center">Project HashiSpring</h3>
 
 <p align="center">
   <a href="" rel="noopener">
