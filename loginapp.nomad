@@ -6,7 +6,7 @@ job "loginapp" {
       config {
         image = "emn503/loginapp:1"
         port_map {
-          app = 80
+          app = 8085
         }
       }
     }
