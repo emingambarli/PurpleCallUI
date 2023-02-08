@@ -33,8 +33,12 @@ The project has 2 nomads(1 server, 1 client) registered in the consul server wit
 <img src="img/3.png" alt="nomad2">
 <img src="img/4.png" alt="Jenkins">
 
-## 🎉 Acknowledgements <a name = "sociallinks"></a>
+## 🎉 Social Links <a name = "sociallinks"></a>
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+<a href="https://www.linkedin.com/in/emin-gambarli/">
+<img border="0" alt="Linkedin" src="img/1.png" width="100" height="100">
+</a>
+
+<a href="https://hub.docker.com/repository/docker/emn503/loginapp/general">
+<img border="0" alt="W3Schools" src="img/1.png" width="100" height="100">
+</a>
