@@ -361,7 +361,7 @@ nav.close ~ .dashboard .top{
     color: var(--text-color);
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 500px) {
     nav{
         width: 73px;
     }

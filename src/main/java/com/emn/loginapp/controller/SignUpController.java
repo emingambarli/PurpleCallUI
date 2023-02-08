@@ -19,12 +19,13 @@ public class SignUpController {
     @PostMapping("/savedata")
     public String saveData(Users users)
     {
-        System.out.println();
+        //System.out.println();
         //if (users.toString() == ""){
         //    System.out.println("Please Fill The Blanks");
         //}
         //else {
-        //    userRepo.save(users);
+        //
+        userRepo.save(users);
         //}
         return "../static/login";
     }
