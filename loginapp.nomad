@@ -4,18 +4,18 @@ job "loginapp" {
     task "loginapp" {
       driver = "docker"
       config {
-        image = "shashwot/springboot-app:200919-eb762c8"
+        image = "emn503/loginapp:1"
         port_map {
-          app = 8090
-        }
-      }
-      }
-      resources {
-        memory = 1024
-        cpu = 1000
-        network {
-          port "app" {}
+          app = 80
         }
       }
     }
+    resources {
+      memory = 1024
+      cpu = 1000
+      network {
+        port "app" {}
+      }
+    }
   }
+}
