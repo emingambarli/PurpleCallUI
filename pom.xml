@@ -14,7 +14,7 @@
     <name>loginapp</name>
     <description>loginapp</description>
     <properties>
-        <java.version>20</java.version>
+        <java.version>11</java.version>
     </properties>
     <dependencies>
         <dependency>
