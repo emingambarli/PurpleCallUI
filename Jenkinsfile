@@ -25,6 +25,7 @@ pipeline {
     
 
         stage("Build Docker images for purplecall") {
+            agent any
             steps {
                 script{
                     withCredentials([usernamePassword(credentialsId: 'a4b0f15b-5736-4f66-998d-238687ce3d99', passwordVariable: 'dockerpass', usernameVariable: 'dockeruser')]) {
@@ -44,6 +45,7 @@ pipeline {
         }
 
         stage("Kubernetes Deployment"){
+            agent any
             steps {
                 script{
                     sshagent(credentials: ['8e38e476-5ba4-470a-bc61-134310519f8c']) {
