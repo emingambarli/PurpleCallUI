@@ -46,8 +46,7 @@ pipeline {
         stage("Kubernetes Deployment"){
             steps {
                 script{
-                    withCredentials([(credentialsId: 'a4b0f15b-5736-4f66-998d-238687ce3d99', passwordVariable: 'dockerpass', usernameVariable: 'dockeruser')]) {
-                        sshagent(credentials: ['8e38e476-5ba4-470a-bc61-134310519f8c']) {
+                    sshagent(credentials: ['8e38e476-5ba4-470a-bc61-134310519f8c']) {
                             sh '''
                             kubectl apply -f deploy.yaml
                             '''
@@ -55,6 +54,5 @@ pipeline {
                     }
                 }
             }
-        }
     }
 }
