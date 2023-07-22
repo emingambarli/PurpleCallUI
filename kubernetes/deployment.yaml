@@ -1,0 +1,31 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: container
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: container
+  template:
+    metadata:
+      labels:
+        app: container
+    spec:
+      containers:
+        - name: container
+          image: emn503/loginapp:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+      restartPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: container-service
+  namespace: default
+spec:
+  type: ExternalName
+  externalName: index.purplecall.com
