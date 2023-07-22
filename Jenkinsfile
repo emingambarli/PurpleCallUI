@@ -19,9 +19,8 @@ pipeline {
                 }
             }
         }
-    }
+    
 
-    stages {
         stage("Build Docker images for purplecall") {
             steps {
                 script{
@@ -29,7 +28,7 @@ pipeline {
                         sh '''
                         echo ${BUILD_ID}
                         sudo docker build -t emn503/loginapp:${BUILD_ID} .
-                        sudo docker build -t emn503/loginapp:latest .
+                       sudo docker build -t emn503/loginapp:latest .
                         sudo docker login -u $dockeruser -p $dockerpass
                         sudo docker push emn503/loginapp:${BUILD_ID}
                         sudo docker push emn503/loginapp:latest
@@ -37,9 +36,8 @@ pipeline {
                         '''
                     }
                 }
-                
+
             }
         }
     }
-
 }
