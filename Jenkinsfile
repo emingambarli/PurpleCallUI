@@ -62,10 +62,10 @@ pipeline {
                             ssh root@$kubeip hostname
                             ssh root@$kubeip whoami
                             ssh root@$kubeip pwd
-                            ssh root@$kubeip rm -rf ~/PurpleCallUI
+                            ssh root@$kubeip rm -rf /root/PurpleCallUI
                             ssh root@$kubeip git clone https://github.com/EMN503/PurpleCallUI.git
                             ssh root@$kubeip kubectl apply -f /root/PurpleCallUI/kubernetes/deployment.yaml
-                            ssh root@$kubeip rm -rf ~/PurpleCallUI
+                            ssh root@$kubeip rm -rf /root/PurpleCallUI
                             '''
                         }
                     }
