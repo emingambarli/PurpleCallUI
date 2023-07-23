@@ -25,7 +25,11 @@ pipeline {
     
 
         stage("Build Docker images for purplecall") {
-            agent any
+            agent {
+                docker {
+                    image 'docker:latest'
+                }
+            }
             steps {
                 script{
                     withCredentials([usernamePassword(credentialsId: '9f61e6b7-5097-4c38-b981-90571314ce51', passwordVariable: 'dockerpasswd', usernameVariable: 'dockerusr')]) {
