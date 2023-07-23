@@ -28,12 +28,12 @@ pipeline {
             agent any
             steps {
                 script{
-                    withCredentials([usernamePassword(credentialsId: '9f61e6b7-5097-4c38-b981-90571314ce51', passwordVariable: 'dockerpass', usernameVariable: 'dockeruser')]) {
+                    withCredentials([usernamePassword(credentialsId: '9f61e6b7-5097-4c38-b981-90571314ce51', passwordVariable: 'dockerpasswd', usernameVariable: 'dockerusr')]) {
                         sh '''
                         echo ${BUILD_ID}
                         sudo docker build -t emn503/loginapp:${BUILD_ID} .
                         sudo docker build -t emn503/loginapp:latest .
-                        sudo docker login -u $dockeruser -p $dockerpass
+                        sudo docker login -u $dockerusr -p $dockerpasswd
                         sudo docker push emn503/loginapp:${BUILD_ID}
                         sudo docker push emn503/loginapp:latest
                         sudo docker rmi emn503/loginapp:${BUILD_ID}
