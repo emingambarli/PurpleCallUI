@@ -55,15 +55,21 @@ pipeline {
             steps {
                 script{
                     sshagent(credentials: ['8e38e476-5ba4-470a-bc61-134310519f8c']) {
+                        withCredentials([string(credentialsId: 'affd6850-c0eb-4f80-a06f-87db2070f60c', variable: 'kubeip')]){
                             sh '''
-                            hostname
-                            whoami
-                            pwd
-                            kubectl apply -f ~/deploy.yaml
+                            ssh root@$kubeip hostname
+                            ssh root@$kubeip whoami
+                            ssh root@$kubeip pwd
+                            ssh root@$kubeip git clone --no-checkout https://github.com/EMN503/PurpleCallUI.git
+                            ssh root@$kubeip cd ./PurpleCallUI
+                            ssh root@$kubeip git sparse-checkout init --cone
+                            ssh root@$kubeip git sparse-checkout set kubernetes
+                            ssh root@$kubeip git checkout @
                             '''
                         }
                     }
                 }
             }
+        }
     }
 }
