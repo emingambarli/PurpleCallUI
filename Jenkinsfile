@@ -1,18 +1,23 @@
 pipeline {
-    agent {
-        docker {
+    stages {
+        stage('Build') {
+            agent {
+               docker {
                 image 'maven:latest'
                 args '-u root'
             }
-    }
-
-    stages {
-        stage('Build') {
+        }
             steps {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-        stage('Test') { 
+        stage('Test') {
+            agent {
+               docker {
+                image 'maven:latest'
+                args '-u root'
+            }
+        } 
             steps {
                 sh 'mvn test' 
             }
@@ -27,7 +32,7 @@ pipeline {
         stage("Build Docker images for purplecall") {
             agent {
                 docker {
-                    image 'docker:latest'
+                    image 'ubuntu:latest'
                 }
             }
             steps {
