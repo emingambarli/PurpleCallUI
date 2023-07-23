@@ -56,7 +56,10 @@ pipeline {
                 script{
                     sshagent(credentials: ['8e38e476-5ba4-470a-bc61-134310519f8c']) {
                             sh '''
-                            kubectl apply -f deploy.yaml
+                            hostname
+                            whoami
+                            pwd
+                            kubectl apply -f ~/deploy.yaml
                             '''
                         }
                     }
