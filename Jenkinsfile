@@ -61,10 +61,8 @@ pipeline {
                             ssh root@$kubeip whoami
                             ssh root@$kubeip pwd
                             ssh root@$kubeip git clone --no-checkout https://github.com/EMN503/PurpleCallUI.git
-                            ssh root@$kubeip cd ./PurpleCallUI
-                            ssh root@$kubeip git sparse-checkout init --cone
-                            ssh root@$kubeip git sparse-checkout set kubernetes
-                            ssh root@$kubeip git checkout @
+                            ssh root@$kubeip cd ./PurpleCallUI && git sparse-checkout init --cone && git sparse-checkout set kubernetes && git checkout @
+                            ssh root@$kubeip kubectl apply -f ./PurpleCallUI/kubernetes/deployment.yaml
                             '''
                         }
                     }
