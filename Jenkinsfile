@@ -31,12 +31,12 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'a4b0f15b-5736-4f66-998d-238687ce3d99', passwordVariable: 'dockerpass', usernameVariable: 'dockeruser')]) {
                         sh '''
                         echo ${BUILD_ID}
-                        docker build -t emn503/loginapp:${BUILD_ID} .
-                        docker build -t emn503/loginapp:latest .
-                        docker login -u $dockeruser -p $dockerpass
-                        docker push emn503/loginapp:${BUILD_ID}
-                        docker push emn503/loginapp:latest
-                        docker rmi emn503/loginapp:${BUILD_ID}
+                        sudo docker build -t emn503/loginapp:${BUILD_ID} .
+                        sudo docker build -t emn503/loginapp:latest .
+                        sudo docker login -u $dockeruser -p $dockerpass
+                        sudo docker push emn503/loginapp:${BUILD_ID}
+                        sudo docker push emn503/loginapp:latest
+                        sudo docker rmi emn503/loginapp:${BUILD_ID}
                         '''
                     }
                 }
