@@ -54,8 +54,8 @@ pipeline {
             agent any
             steps {
                 script{
-                    sshagent(credentials: ['8e38e476-5ba4-470a-bc61-134310519f8c']) {
-                        withCredentials([string(credentialsId: 'affd6850-c0eb-4f80-a06f-87db2070f60c', variable: 'kubeip')]){
+                    withCredentials([string(credentialsId: 'affd6850-c0eb-4f80-a06f-87db2070f60c', variable: 'kubeip')]) {
+                        sshagent(credentials: ['8e38e476-5ba4-470a-bc61-134310519f8c']) {
                             sh '''
                             ssh root@$kubeip hostname
                             ssh root@$kubeip whoami
