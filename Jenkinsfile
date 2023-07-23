@@ -58,7 +58,7 @@ pipeline {
                         sshagent(credentials: ['8e38e476-5ba4-470a-bc61-134310519f8c']) {
                             sh '''
                             [ -d ~/.ssh ] || mkdir ~/.ssh && chmod 0700 ~/.ssh
-                            ssh-keyscan -t rsa,dsa kubeip >> ~/.ssh/known_hosts
+                            ssh-keyscan -t rsa,dsa $kubeip >> ~/.ssh/known_hosts
                             ssh root@$kubeip hostname
                             ssh root@$kubeip whoami
                             ssh root@$kubeip pwd
