@@ -2,7 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: container
-  namespace: purplecallui
+  namespace: purplecall
 spec:
   replicas: 2
   selector:
